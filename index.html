@@ -7,57 +7,71 @@
   <meta name="theme-color" content="#0b0b0f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
   <title>Lucky Jet</title>
+  <meta name="description" content="Deschide platforma Lucky Jet.">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-      background: #0b0b0f;
-      color: white;
+      padding: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      background: #0b0b0f;
+      color: #fff;
     }
+
     .app {
       width: 100%;
       max-width: 390px;
       text-align: center;
     }
+
     .logo {
-      width: 82px;
-      height: 82px;
+      width: 88px;
+      height: 88px;
       margin: 0 auto 24px;
       display: grid;
       place-items: center;
-      border-radius: 24px;
+      border-radius: 26px;
       background: linear-gradient(135deg, #ff4545, #9b111e);
-      font-size: 38px;
+      font-size: 42px;
       box-shadow: 0 0 40px #ff303033;
     }
+
     .tag {
       color: #ff626a;
       font-size: 11px;
       letter-spacing: 3px;
       font-weight: 700;
     }
+
     h1 {
-      font-size: 34px;
       margin: 12px 0;
+      font-size: 34px;
       letter-spacing: 1px;
     }
+
     p {
-      color: #a6a6b3;
+      color: #b0b0bd;
       font-size: 15px;
       line-height: 1.7;
     }
+
     .button {
       display: block;
       width: 100%;
       padding: 17px;
       margin-top: 28px;
+      border: 0;
       border-radius: 14px;
       background: #f04452;
       color: white;
@@ -65,31 +79,45 @@
       font-weight: 700;
       text-decoration: none;
     }
+
+    .button:active {
+      opacity: 0.8;
+    }
+
     .note {
-      font-size: 11px;
-      color: #777784;
       margin-top: 24px;
+      color: #777784;
+      font-size: 11px;
+      line-height: 1.6;
     }
   </style>
 </head>
+
 <body>
   <main class="app">
     <div class="logo">✈️</div>
+
     <div class="tag">APLICAȚIA TA</div>
+
     <h1>LUCKY JET</h1>
+
     <p>
       Intră pe platformă folosind butonul de mai jos.
-      Verifică termenii și condițiile înainte de a juca.
+      Verifică regulile și condițiile înainte de a juca.
     </p>
-    <a class="button"
-       href="https://w-one973.com/v3/lucky-jet-updated?p=qepu"
-       target="_blank"
-       rel="noopener noreferrer">
+
+    <a
+      class="button"
+      href="https://w-one973.com/v3/lucky-jet-updated?p=qepu"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       DESCHIDE PLATFORMĂ →
     </a>
+
     <div class="note">
       Jocurile de noroc implică riscuri financiare.
-      Participă numai dacă ai vârsta legală.
+      Participă numai dacă ai vârsta legală și joacă responsabil.
     </div>
   </main>
 </body>
