@@ -4,215 +4,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#13051f">
+  <meta name="theme-color" content="#10051f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <title>Lucky Jet</title>
-  <meta name="description" content="Instalează aplicația Lucky Jet">
+  <meta name="description" content="Instalează Lucky Jet pe telefonul tău.">
 
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="icon" href="./icons/icon-192.png">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       min-height: 100vh;
-      padding: 22px;
+      padding: 24px 16px;
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      align-items: center;
+      font-family: Arial, sans-serif;
       color: white;
       background:
-        radial-gradient(ellipse at 50% 15%, #64209b 0%, #260c3e 38%, #09040f 78%);
-      overflow-x: hidden;
+        radial-gradient(ellipse at top, #521078, transparent 60%),
+        linear-gradient(160deg, #10051f, #07030d);
     }
 
     .app {
       width: 100%;
-      max-width: 390px;
-      padding: 28px 22px;
+      max-width: 430px;
       text-align: center;
-      border: 1px solid #d44cff70;
-      border-radius: 26px;
-      background: linear-gradient(160deg, #251035f5, #100817f5);
-      box-shadow: 0 0 45px #b52aff30;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 13px;
-      border: 1px solid #ff4be855;
-      border-radius: 30px;
-      background: #a52bff20;
-      color: #ffc5ff;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 3px;
-    }
-
-    .logo-wrap {
-      position: relative;
-      width: 150px;
-      height: 150px;
-      margin: 24px auto 20px;
-      animation: float 3s ease-in-out infinite;
     }
 
     .logo {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 32px;
-      border: 2px solid #ed8cff;
-      box-shadow: 0 0 28px #c026ff70, 0 0 60px #ff2ca630;
+      width: 145px;
+      height: 145px;
+      object-fit: contain;
+      border-radius: 28px;
+      filter: drop-shadow(0 0 24px #d000ff88);
+      margin-bottom: 16px;
     }
 
     h1 {
-      margin: 10px 0;
+      margin: 0;
       font-size: 36px;
       font-weight: 900;
+      font-style: italic;
       letter-spacing: 2px;
-      background: linear-gradient(90deg, #ffffff, #ff9cf7, #d9a3ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      color: #ff43e8;
+      text-shadow: 0 0 16px #d000ff;
     }
 
     .subtitle {
-      margin: 12px 0 24px;
-      color: #d4c3e1;
-      font-size: 14px;
-      line-height: 1.7;
+      color: #ded0ec;
+      margin: 12px 0 28px;
+      font-size: 15px;
+      line-height: 1.5;
     }
 
-    .button {
+    .install {
+      display: block;
       width: 100%;
-      padding: 18px 10px;
-      border: 1px solid #ffb1fa;
+      padding: 19px 12px;
+      border: 0;
       border-radius: 15px;
-      color: #fff;
-      background: linear-gradient(100deg, #8428ff, #d526ff, #ff398d);
-      box-shadow: 0 0 25px #d12cff55;
-      font-size: 16px;
+      background: linear-gradient(100deg, #ff27d7, #8d32ff);
+      color: white;
+      font-size: 17px;
       font-weight: 900;
-      letter-spacing: .3px;
       cursor: pointer;
-      animation: glow 2s ease-in-out infinite alternate;
+      box-shadow: 0 0 25px #c000ff66;
     }
 
-    .button:active {
-      transform: scale(.98);
+    .guide {
+      display: none;
+      margin-top: 24px;
+      padding: 20px;
+      text-align: left;
+      border: 1px solid #a53dff;
+      border-radius: 18px;
+      background: #190b2a;
     }
 
-    #install-help {
-      color: #f0d7ff;
-      font-size: 13px;
-      line-height: 1.7;
+    .guide.show { display: block; }
+
+    .guide h2 {
+      text-align: center;
+      color: #ff5ce8;
+      font-size: 21px;
+    }
+
+    .step {
+      margin: 12px 0;
+      padding: 13px;
+      border-radius: 12px;
+      background: #29123c;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .number {
+      color: #ff59e8;
+      font-weight: 900;
+    }
+
+    .browser-link {
+      display: block;
+      margin-top: 18px;
+      padding: 15px 12px;
+      border-radius: 12px;
+      background: linear-gradient(100deg, #ff27d7, #8d32ff);
+      color: white;
+      text-align: center;
+      font-weight: 900;
+      text-decoration: none;
     }
 
     .note {
-      margin-top: 22px;
-      color: #9786a5;
-      font-size: 11px;
-      line-height: 1.6;
+      color: #cbb9dc;
+      font-size: 12px;
+      line-height: 1.5;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-7px); }
-    }
-
-    @keyframes glow {
-      from { box-shadow: 0 0 15px #d12cff40; }
-      to { box-shadow: 0 0 30px #ff39c880; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important;
-      }
+    .footer {
+      margin-top: 24px;
+      color: #9d89b1;
+      font-size: 12px;
     }
   </style>
 </head>
 
 <body>
   <main class="app">
-    <div class="badge">✦ JOC • EMOȚIE • ACȚIUNE ✦</div>
-
-    <div class="logo-wrap">
-      <img
-        class="logo"
-        src="icons/icon-192.png"
-        alt="Lucky Jet"
-        onerror="this.style.display='none';document.getElementById('logo-error').style.display='block';"
-      >
-      <div id="logo-error" style="display:none;padding:40px 0;color:#ff9cf7;">
-        ✈️
-      </div>
-    </div>
+    <img
+      class="logo"
+      src="./icons/icon-192.png"
+      alt="Lucky Jet"
+      onerror="this.style.display='none'"
+    >
 
     <h1>LUCKY JET</h1>
 
     <p class="subtitle">
-      Adaugă aplicația pe ecranul telefonului
-      pentru acces rapid.
+      Instalează aplicația pe ecranul telefonului tău.
     </p>
 
-    <button class="button" id="install-btn" type="button">
+    <button class="install" id="installBtn" type="button">
       📲 INSTALEAZĂ APLICAȚIA
     </button>
 
-    <p id="install-help" aria-live="polite"></p>
+    <section class="guide" id="guide" aria-live="polite"></section>
 
-    <div class="note">
-      Jocurile de noroc implică riscuri financiare.
-      Numai pentru persoane care au vârsta legală.
-      Joacă responsabil.
-    </div>
+    <div class="footer">LUCKY JET · INSTALARE PE TELEFON</div>
   </main>
 
   <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./sw.js")
-          .catch(error => console.error(error));
-      });
+    const APP_URL =
+      "https://arikrat722-coder.github.io/My.pewa.app/";
+
+    const button = document.getElementById("installBtn");
+    const guide = document.getElementById("guide");
+
+    function showGuide() {
+      guide.innerHTML = `
+        <h2>Deschide în Safari</h2>
+
+        <div class="step">
+          <span class="number">PASUL 1</span><br>
+          Apasă butonul de mai jos pentru a deschide pagina Lucky Jet.
+        </div>
+
+        <a class="browser-link"
+           href="${APP_URL}?install=1"
+           target="_blank"
+           rel="noopener">
+          🌐 DESCHIDE PAGINA ÎN BROWSER
+        </a>
+
+        <div class="step">
+          <span class="number">PASUL 2</span><br>
+          Dacă pagina se deschide în Telegram, intră în meniul acestuia
+          și alege „Deschide în Safari”, dacă opțiunea este disponibilă.
+        </div>
+
+        <div class="step">
+          <span class="number">PASUL 3</span><br>
+          În Safari, apasă „Partajare” — pătratul cu săgeata în sus.
+        </div>
+
+        <div class="step">
+          <span class="number">PASUL 4</span><br>
+          Alege „Adaugă pe ecranul principal”, apoi apasă „Adaugă”.
+        </div>
+
+        <p class="note">
+          Pe iPhone, instalarea trebuie confirmată de utilizator.
+          Un site nu poate forța Safari să se deschidă din Telegram.
+        </p>
+      `;
+
+      guide.classList.add("show");
+      guide.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
 
-    let installPrompt = null;
+    button.addEventListener("click", showGuide);
 
-    window.addEventListener("beforeinstallprompt", event => {
-      event.preventDefault();
-      installPrompt = event;
-    });
+    // Afișează automat ghidul când pagina este deschisă
+    // cu parametrul ?install=1.
+    const params = new URLSearchParams(window.location.search);
 
-    document.getElementById("install-btn").addEventListener("click", async () => {
-      const help = document.getElementById("install-help");
+    if (params.get("install") === "1") {
+      showGuide();
+    }
 
-      if (installPrompt) {
-        installPrompt.prompt();
-        await installPrompt.userChoice;
-        installPrompt = null;
-        return;
-      }
-
-      const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-
-      if (isIOS) {
-        help.textContent =
-          "Pentru instalare, deschide pagina în Safari, apasă Partajare, apoi «Adaugă pe ecranul principal» și «Adaugă».";
-      } else {
-        help.textContent =
-          "Deschide meniul browserului și caută «Instalează aplicația» sau «Adaugă pe ecranul principal».";
-      }
-    });
+    // Înregistrarea PWA existente.
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("./sw.js")
+          .catch(error => console.error("Service worker:", error));
+      });
+    }
   </script>
 </body>
 </html>
