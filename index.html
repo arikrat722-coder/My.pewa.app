@@ -130,5 +130,44 @@
     });
   }
 </script>
+
+<div id="install-box" style="margin:20px auto;padding:16px;text-align:center;background:#15121f;border-radius:16px;color:white;font-family:Arial,sans-serif;">
+  <h2 style="color:#f5c85b;">LUCKY JET</h2>
+  <p>Adaugă aplicația pe ecranul telefonului</p>
+  <button id="install-btn" style="width:100%;padding:16px;border:0;border-radius:10px;background:#f5c85b;color:#17120a;font-size:17px;font-weight:bold;">
+    📲 INSTALARE APLICAȚIE
+  </button>
+  <p id="install-help" style="font-size:14px;line-height:1.6;"></p>
+</div>
+
+<script>
+let installPrompt;
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  installPrompt = event;
+});
+
+document.getElementById("install-btn").addEventListener("click", async () => {
+  const help = document.getElementById("install-help");
+
+  if (installPrompt) {
+    installPrompt.prompt();
+    await installPrompt.userChoice;
+    installPrompt = null;
+    return;
+  }
+
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+
+  if (isIOS) {
+    help.textContent =
+      "Pe iPhone: deschide pagina în Safari, apasă Partajare și apoi «Adaugă pe ecranul principal».";
+  } else {
+    help.textContent =
+      "Dacă apare opțiunea «Instalează aplicația» în meniul browserului, selecteaz-o. Altfel, deschide pagina în Chrome și verifică meniul.";
+  }
+});
+</script>
 </body>
 </html>
