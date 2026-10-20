@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -77,7 +76,7 @@
       color: white;
       font-size: 16px;
       font-weight: 700;
-      text-decoration: none;
+      cursor: pointer;
     }
 
     .button:active {
@@ -89,6 +88,12 @@
       color: #777784;
       font-size: 11px;
       line-height: 1.6;
+    }
+
+    #install-help {
+      margin-top: 12px;
+      color: #f5c85b;
+      font-size: 13px;
     }
   </style>
 </head>
@@ -102,18 +107,14 @@
     <h1>LUCKY JET</h1>
 
     <p>
-      Intră pe platformă folosind butonul de mai jos.
-      Verifică regulile și condițiile înainte de a juca.
+      Adaugă aplicația pe ecranul telefonului pentru acces rapid și ușor.
     </p>
 
-    <a
-      class="button"
-      href="https://w-one973.com/v3/lucky-jet-updated?p=qepu"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      DESCHIDE PLATFORMĂ →
-    </a>
+    <!-- Doar butonul de instalare -->
+    <button id="install-btn" class="button">
+      📲 INSTALARE APLICAȚIE
+    </button>
+    <p id="install-help"></p>
 
     <div class="note">
       Jocurile de noroc implică riscuri financiare.
@@ -121,53 +122,42 @@
     </div>
   </main>
 
-<script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./sw.js").catch((error) => {
-        console.error("Service worker registration failed:", error);
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js").catch((error) => {
+          console.error("Service worker registration failed:", error);
+        });
       });
+    }
+
+    let installPrompt;
+
+    window.addEventListener("beforeinstallprompt", (event) => {
+      event.preventDefault();
+      installPrompt = event;
     });
-  }
-</script>
 
-<div id="install-box" style="margin:20px auto;padding:16px;text-align:center;background:#15121f;border-radius:16px;color:white;font-family:Arial,sans-serif;">
-  <h2 style="color:#f5c85b;">LUCKY JET</h2>
-  <p>Adaugă aplicația pe ecranul telefonului</p>
-  <button id="install-btn" style="width:100%;padding:16px;border:0;border-radius:10px;background:#f5c85b;color:#17120a;font-size:17px;font-weight:bold;">
-    📲 INSTALARE APLICAȚIE
-  </button>
-  <p id="install-help" style="font-size:14px;line-height:1.6;"></p>
-</div>
+    document.getElementById("install-btn").addEventListener("click", async () => {
+      const help = document.getElementById("install-help");
 
-<script>
-let installPrompt;
+      if (installPrompt) {
+        installPrompt.prompt();
+        await installPrompt.userChoice;
+        installPrompt = null;
+        return;
+      }
 
-window.addEventListener("beforeinstallprompt", (event) => {
-  event.preventDefault();
-  installPrompt = event;
-});
+      const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
 
-document.getElementById("install-btn").addEventListener("click", async () => {
-  const help = document.getElementById("install-help");
-
-  if (installPrompt) {
-    installPrompt.prompt();
-    await installPrompt.userChoice;
-    installPrompt = null;
-    return;
-  }
-
-  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-
-  if (isIOS) {
-    help.textContent =
-      "Pe iPhone: deschide pagina în Safari, apasă Partajare și apoi «Adaugă pe ecranul principal».";
-  } else {
-    help.textContent =
-      "Dacă apare opțiunea «Instalează aplicația» în meniul browserului, selecteaz-o. Altfel, deschide pagina în Chrome și verifică meniul.";
-  }
-});
-</script>
+      if (isIOS) {
+        help.textContent =
+          "Pe iPhone: deschide pagina în Safari, apasă butonul Partajare și apoi «Adaugă pe ecranul principal».";
+      } else {
+        help.textContent =
+          "Dacă nu apare pop-up-ul, deschide meniul browserului (cele 3 puncte) și alege «Instalează aplicația».";
+      }
+    });
+  </script>
 </body>
 </html>
