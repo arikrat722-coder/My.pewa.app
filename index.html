@@ -1,139 +1,194 @@
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0b0f">
+  <meta name="theme-color" content="#13051f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <title>Lucky Jet</title>
-  <meta name="description" content="Deschide platforma Lucky Jet.">
+  <meta name="description" content="Instalează aplicația Lucky Jet">
 
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       min-height: 100vh;
-      padding: 24px;
+      padding: 22px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-      background: #0b0b0f;
-      color: #fff;
+      color: white;
+      background:
+        radial-gradient(ellipse at 50% 15%, #64209b 0%, #260c3e 38%, #09040f 78%);
+      overflow-x: hidden;
     }
 
     .app {
       width: 100%;
       max-width: 390px;
+      padding: 28px 22px;
       text-align: center;
+      border: 1px solid #d44cff70;
+      border-radius: 26px;
+      background: linear-gradient(160deg, #251035f5, #100817f5);
+      box-shadow: 0 0 45px #b52aff30;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 13px;
+      border: 1px solid #ff4be855;
+      border-radius: 30px;
+      background: #a52bff20;
+      color: #ffc5ff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .logo-wrap {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 24px auto 20px;
+      animation: float 3s ease-in-out infinite;
     }
 
     .logo {
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 24px;
-      display: grid;
-      place-items: center;
-      border-radius: 26px;
-      background: linear-gradient(135deg, #ff4545, #9b111e);
-      font-size: 42px;
-      box-shadow: 0 0 40px #ff303033;
-    }
-
-    .tag {
-      color: #ff626a;
-      font-size: 11px;
-      letter-spacing: 3px;
-      font-weight: 700;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 32px;
+      border: 2px solid #ed8cff;
+      box-shadow: 0 0 28px #c026ff70, 0 0 60px #ff2ca630;
     }
 
     h1 {
-      margin: 12px 0;
-      font-size: 34px;
-      letter-spacing: 1px;
+      margin: 10px 0;
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #ffffff, #ff9cf7, #d9a3ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    p {
-      color: #b0b0bd;
-      font-size: 15px;
+    .subtitle {
+      margin: 12px 0 24px;
+      color: #d4c3e1;
+      font-size: 14px;
       line-height: 1.7;
     }
 
     .button {
-      display: block;
       width: 100%;
-      padding: 17px;
-      margin-top: 28px;
-      border: 0;
-      border-radius: 14px;
-      background: #f04452;
-      color: white;
+      padding: 18px 10px;
+      border: 1px solid #ffb1fa;
+      border-radius: 15px;
+      color: #fff;
+      background: linear-gradient(100deg, #8428ff, #d526ff, #ff398d);
+      box-shadow: 0 0 25px #d12cff55;
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 900;
+      letter-spacing: .3px;
       cursor: pointer;
+      animation: glow 2s ease-in-out infinite alternate;
     }
 
     .button:active {
-      opacity: 0.8;
+      transform: scale(.98);
+    }
+
+    #install-help {
+      color: #f0d7ff;
+      font-size: 13px;
+      line-height: 1.7;
     }
 
     .note {
-      margin-top: 24px;
-      color: #777784;
+      margin-top: 22px;
+      color: #9786a5;
       font-size: 11px;
       line-height: 1.6;
     }
 
-    #install-help {
-      margin-top: 12px;
-      color: #f5c85b;
-      font-size: 13px;
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 15px #d12cff40; }
+      to { box-shadow: 0 0 30px #ff39c880; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+      }
     }
   </style>
 </head>
 
 <body>
   <main class="app">
-    <div class="logo">✈️</div>
+    <div class="badge">✦ JOC • EMOȚIE • ACȚIUNE ✦</div>
 
-    <div class="tag">APLICAȚIA TA</div>
+    <div class="logo-wrap">
+      <img
+        class="logo"
+        src="icons/icon-192.png"
+        alt="Lucky Jet"
+        onerror="this.style.display='none';document.getElementById('logo-error').style.display='block';"
+      >
+      <div id="logo-error" style="display:none;padding:40px 0;color:#ff9cf7;">
+        ✈️
+      </div>
+    </div>
 
     <h1>LUCKY JET</h1>
 
-    <p>
-      Adaugă aplicația pe ecranul telefonului pentru acces rapid și ușor.
+    <p class="subtitle">
+      Adaugă aplicația pe ecranul telefonului
+      pentru acces rapid.
     </p>
 
-    <!-- Doar butonul de instalare -->
-    <button id="install-btn" class="button">
-      📲 INSTALARE APLICAȚIE
+    <button class="button" id="install-btn" type="button">
+      📲 INSTALEAZĂ APLICAȚIA
     </button>
-    <p id="install-help"></p>
+
+    <p id="install-help" aria-live="polite"></p>
 
     <div class="note">
       Jocurile de noroc implică riscuri financiare.
-      Participă numai dacă ai vârsta legală și joacă responsabil.
+      Numai pentru persoane care au vârsta legală.
+      Joacă responsabil.
     </div>
   </main>
 
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./sw.js").catch((error) => {
-          console.error("Service worker registration failed:", error);
-        });
+        navigator.serviceWorker.register("./sw.js")
+          .catch(error => console.error(error));
       });
     }
 
-    let installPrompt;
+    let installPrompt = null;
 
-    window.addEventListener("beforeinstallprompt", (event) => {
+    window.addEventListener("beforeinstallprompt", event => {
       event.preventDefault();
       installPrompt = event;
     });
@@ -152,10 +207,10 @@
 
       if (isIOS) {
         help.textContent =
-          "Pe iPhone: deschide pagina în Safari, apasă butonul Partajare și apoi «Adaugă pe ecranul principal».";
+          "Pentru instalare, deschide pagina în Safari, apasă Partajare, apoi «Adaugă pe ecranul principal» și «Adaugă».";
       } else {
         help.textContent =
-          "Dacă nu apare pop-up-ul, deschide meniul browserului (cele 3 puncte) și alege «Instalează aplicația».";
+          "Deschide meniul browserului și caută «Instalează aplicația» sau «Adaugă pe ecranul principal».";
       }
     });
   </script>
