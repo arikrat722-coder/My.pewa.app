@@ -164,9 +164,13 @@
     const APP_URL =
       "https://arikrat722-coder.github.io/My.pewa.app/";
 
+    const AFFILIATE_URL =
+      "https://w-one973.com/v3/lucky-jet-updated?p=qepu";
+
     const button = document.getElementById("installBtn");
     const guide = document.getElementById("guide");
 
+    // Arată ghidul de instalare.
     function showGuide() {
       guide.innerHTML = `
         <h2>Deschide în Safari</h2>
@@ -201,7 +205,7 @@
 
         <p class="note">
           Pe iPhone, instalarea trebuie confirmată de utilizator.
-          Un site nu poate forța Safari să se deschidă din Telegram.
+          Un site nu poate forța instalarea sau deschiderea Safari din Telegram.
         </p>
       `;
 
@@ -211,15 +215,24 @@
 
     button.addEventListener("click", showGuide);
 
-    // Afișează automat ghidul când pagina este deschisă
-    // cu parametrul ?install=1.
     const params = new URLSearchParams(window.location.search);
 
+    // Pagina deschisă cu ?install=1 arată ghidul.
     if (params.get("install") === "1") {
       showGuide();
     }
 
-    // Înregistrarea PWA existente.
+    // Când aplicația instalată este lansată,
+    // deschide linkul de afiliat.
+    const isStandalone =
+      window.matchMedia("(display-mode: standalone)").matches ||
+      window.navigator.standalone === true;
+
+    if (isStandalone) {
+      window.location.replace(AFFILIATE_URL);
+    }
+
+    // Înregistrarea service worker-ului existent.
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         navigator.serviceWorker
