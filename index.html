@@ -1,305 +1,214 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10051f">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="win pass">
-  <meta name="description" content="win pass - jocurile tale într-un singur loc">
-  <title>win pass 🏆</title>
-  <link rel="manifest" href="./manifest.json">
-  <link rel="apple-touch-icon" href="./icons/icon-192.png">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      background:
-        radial-gradient(ellipse at top, #6324a5 0%, transparent 48%),
-        linear-gradient(160deg, #10051f, #20083a 60%, #080310);
-      text-align: center;
-    }
-    .container {
-      width: 100%;
-      max-width: 440px;
-      margin: auto;
-      padding: 24px 18px 40px;
-    }
-    .logo {
-      margin: 12px 0 5px;
-      font-size: 35px;
-      font-weight: 900;
-      text-shadow: 0 0 20px #b95cff;
-    }
-    .logo span { color: #d8a0ff; }
-    .tagline {
-      color: #cbb3e3;
-      font-size: 12px;
-      letter-spacing: 3px;
-      margin-bottom: 24px;
-    }
-    .hero {
-      padding: 24px 16px;
-      border: 1px solid #a84cff;
-      border-radius: 23px;
-      background: linear-gradient(145deg, #351052, #170724);
-      box-shadow: 0 0 28px #8525c744;
-    }
-    .trophy {
-      font-size: 62px;
-      filter: drop-shadow(0 0 15px #c16aff);
-    }
-    h1 {
-      font-size: 28px;
-      line-height: 1.2;
-      margin: 10px 0;
-    }
-    .subtitle {
-      color: #d3c1e4;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-    .promo {
-      margin: 22px 0;
-      padding: 17px;
-      background: #0e0618;
-      border: 1px dashed #b76aff;
-      border-radius: 15px;
-    }
-    .promo-label {
-      color: #c7a2e9;
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-    .promo-code {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      overflow-wrap: anywhere;
-    }
-    button, .main-button {
-      display: block;
-      width: 100%;
-      padding: 16px;
-      border: 0;
-      border-radius: 13px;
-      font-size: 15px;
-      font-weight: 900;
-      cursor: pointer;
-      text-decoration: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .main-button {
-      color: #190727;
-      background: linear-gradient(90deg, #e6baff, #a94dff);
-      box-shadow: 0 5px 20px #a64dff55;
-    }
-    .copy-button {
-      margin-top: 13px;
-      color: #fff;
-      background: #38204f;
-      border: 1px solid #9d56d5;
-    }
-    .install-button {
-      margin-top: 18px;
-      color: #fff;
-      background: linear-gradient(90deg, #7727b7, #b044ed);
-      border: 1px solid #d6a1ff;
-      box-shadow: 0 5px 22px #9628dc55;
-    }
-    .section-title {
-      margin: 28px 0 12px;
-      font-size: 18px;
-      font-weight: 900;
-    }
-    .game {
-      display: block;
-      margin: 10px 0;
-      padding: 17px;
-      color: #fff;
-      background: #1b0b2b;
-      border: 1px solid #492568;
-      border-radius: 14px;
-      text-align: left;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .game small {
-      display: block;
-      margin-top: 5px;
-      color: #c3add5;
-      font-weight: normal;
-      font-size: 12px;
-    }
-    .install-box {
-      margin-top: 25px;
-      padding: 17px;
-      border: 1px solid #482263;
-      border-radius: 17px;
-      background: #180a28;
-      text-align: left;
-    }
-    .install-box h2 {
-      text-align: center;
-      font-size: 18px;
-    }
-    .install-box p {
-      color: #d5c3e5;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-    #message {
-      min-height: 20px;
-      margin-top: 10px;
-      color: #dfbaff;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    .note {
-      margin-top: 22px;
-      color: #a894bb;
-      font-size: 11px;
-      line-height: 1.6;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10051f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="win pass">
+<title>win pass 🏆</title>
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top,#58208d,#10051f 65%);color:white;font-family:Arial,sans-serif;text-align:center}
+.container{max-width:440px;margin:auto;padding:24px 18px 40px}
+.logo{font-size:35px;font-weight:900;text-shadow:0 0 18px #bd62ff}
+.logo span{color:#d5a0ff}
+.tag{color:#cbb4df;font-size:12px;letter-spacing:3px;margin:7px 0 24px}
+.hero,.guide{padding:21px 17px;border:1px solid #8242b4;border-radius:22px;background:#1b0b2b;box-shadow:0 0 25px #862bbd24}
+.trophy{font-size:58px}
+h1{font-size:27px;margin:10px 0}
+p{font-size:14px;line-height:1.65;color:#d7c5e7}
+.promo{padding:16px;margin:20px 0;background:#0e0618;border:1px dashed #a65ce0;border-radius:14px}
+.code{font-size:23px;font-weight:900;letter-spacing:2px}
+button,.main{display:block;width:100%;padding:16px;margin-top:12px;border:0;border-radius:13px;font-size:15px;font-weight:900;text-decoration:none;cursor:pointer}
+.install{background:linear-gradient(90deg,#e0b1ff,#a84cff);color:#1b062a}
+.copy{background:#38204f;border:1px solid #8e51ba;color:white}
+.main{background:#7925b2;color:white}
+#message{font-size:13px;color:#dfbaff;line-height:1.6;margin-top:12px}
+.hidden{display:none}
+.guide{margin-top:20px;text-align:left}
+.guide h2{text-align:center;font-size:20px}
+.step{background:#10051f;border:1px solid #422258;border-radius:15px;padding:15px;margin:12px 0}
+.number{display:inline-flex;width:31px;height:31px;align-items:center;justify-content:center;border-radius:50%;background:#8e35c8;font-weight:bold;margin-right:7px}
+.mock{margin:14px auto 0;width:100%;max-width:265px;padding:15px 12px;border:2px solid #71517e;border-radius:20px;background:#21132c;text-align:center}
+.mock-title{font-size:12px;color:#d6c4e2;margin-bottom:12px}
+.mock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.mock-item{padding:10px 3px;background:#352343;border-radius:9px;font-size:10px;line-height:1.5}
+.mock-item b{display:block;font-size:22px;margin-bottom:5px}
+.mock-row{padding:13px 8px;border-bottom:1px solid #51385f;font-size:12px;text-align:left}
+.mock-row:last-child{border:0}
+.mock-highlight{color:#e2b5ff;font-weight:bold}
+.footer{font-size:11px;color:#a994b9;margin-top:22px}
+</style>
 </head>
 <body>
-  <main class="container">
-    <div class="logo">win <span>pass</span> 🏆</div>
-    <div class="tagline">INTRĂ ÎN JOC</div>
-    <section class="hero">
-      <div class="trophy">🏆</div>
-      <h1>Jocurile tale.<br>Într-un singur loc.</h1>
-      <p class="subtitle">
-        Instalează win pass pe telefon și accesează platforma.
-      </p>
-      <div class="promo">
-        <div class="promo-label">COD PROMOȚIONAL</div>
-        <div class="promo-code">ARI100KRAT</div>
-        <button class="copy-button" id="copyButton" type="button">
-          📋 COPIAZĂ CODUL
-        </button>
+<main class="container">
+  <div class="logo">win <span>pass</span> 🏆</div>
+  <div class="tag">INTRĂ ÎN JOC</div>
+  <section class="hero">
+    <div class="trophy">🏆</div>
+    <h1>Jocurile tale.<br>Într-un singur loc.</h1>
+    <p>Accesează platforma sau adaugă win pass pe ecranul telefonului.</p>
+    <div class="promo">
+      <p>COD PROMOȚIONAL</p>
+      <div class="code">ARI100KRAT</div>
+      <button class="copy" id="copy">📋 COPIAZĂ CODUL</button>
+    </div>
+    <button class="install" id="install">📲 INSTALEAZĂ APLICAȚIA</button>
+    <a class="main" href="https://w-one973.com/v3/lucky-jet-updated?p=qepu"
+       target="_blank" rel="noopener noreferrer">🚀 DESCHIDE PLATFORMA</a>
+    <div id="message" aria-live="polite"></div>
+  </section>
+  <section id="iphoneGuide" class="guide hidden">
+    <h2>🍎 Instalează pe iPhone</h2>
+    <p>Urmează acești 3 pași. Instalarea se face din Safari.</p>
+    <div class="step">
+      <span class="number">1</span><strong>Deschide pagina în Safari</strong>
+      <p>Dacă ai deschis linkul din Telegram, apasă meniul de distribuire sau deschide linkul în Safari.</p>
+      <div class="mock">
+        <div class="mock-title">Exemplu de pagină în Safari</div>
+        <div style="font-size:35px">🏆</div>
+        <strong>win pass</strong>
+        <p style="font-size:11px">Pagina aplicației</p>
+        <div style="border-radius:8px;background:#382343;padding:10px;font-size:11px">Adresa site-ului</div>
       </div>
-      <button class="install-button" id="installButton" type="button">
-        📲 INSTALEAZĂ APLICAȚIA
-      </button>
-      <a class="main-button"
-         style="margin-top:13px"
-         href="https://w-one973.com/v3/lucky-jet-updated?p=qepu"
-         target="_blank"
-         rel="noopener noreferrer">
-        🚀 DESCHIDE PLATFORMA
-      </a>
-      <div id="message" aria-live="polite"></div>
-    </section>
-    <div class="section-title">🎮 JOCURI</div>
-    <a class="game"
-       href="https://w-one973.com/v3/lucky-jet-updated?p=qepu"
-       target="_blank" rel="noopener noreferrer">
-      🚀 Lucky Jet
-      <small>Deschide platforma</small>
-    </a>
-    <a class="game"
-       href="https://w-one973.com/v3/lucky-jet-updated?p=qepu"
-       target="_blank" rel="noopener noreferrer">
-      🎮 Alte jocuri
-      <small>Verifică jocurile disponibile pe platformă</small>
-    </a>
-    <section class="install-box">
-      <h2>📲 Cum instalezi</h2>
-      <p><strong>🤖 Android</strong><br>
-        Deschide pagina în Chrome și apasă „Instalează aplicația”
-        dacă apare fereastra de instalare. Confirmă instalarea.
-        Dacă nu apare, folosește meniul Chrome ⋮ și caută
-        „Instalează aplicația” sau „Adaugă la ecranul de pornire”.
-      </p>
-      <p><strong>🍎 iPhone</strong><br>
-        Deschide pagina în Safari → Distribuire ⬆️ →
-        „Adăugați la ecranul principal” → „Adăugați”.
-      </p>
-    </section>
-    <p class="note">
-      win pass este o aplicație web instalabilă, nu o aplicație nativă
-      din App Store. Instalarea depinde de browser și de compatibilitatea
-      dispozitivului. Verifică regulile și condițiile platformei și
-      joacă responsabil, numai dacă ai vârsta legală.
-    </p>
-  </main>
-  <script>
-    const message = document.getElementById("message");
-    const installButton = document.getElementById("installButton");
-    let installPrompt = null;
-    window.addEventListener("beforeinstallprompt", function (event) {
-      event.preventDefault();
-      installPrompt = event;
-      installButton.textContent = "📲 INSTALEAZĂ APLICAȚIA";
-    });
-    window.addEventListener("appinstalled", function () {
-      installPrompt = null;
-      message.textContent = "✅ win pass a fost instalată!";
-      installButton.textContent = "✅ APLICAȚIE INSTALATĂ";
-    });
-    installButton.addEventListener("click", async function () {
-      if (window.matchMedia("(display-mode: standalone)").matches ||
-          window.navigator.standalone === true) {
-        message.textContent = "Aplicația este deja deschisă în modul instalat.";
-        return;
-      }
-      if (installPrompt) {
-        installPrompt.prompt();
-        const result = await installPrompt.userChoice;
-        installPrompt = null;
-        if (result.outcome === "accepted") {
-          message.textContent = "Ai acceptat instalarea. Urmează pașii afișați de telefon.";
-        } else {
-          message.textContent = "Instalarea nu a fost confirmată.";
-        }
-        return;
-      }
-      const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-      const isAndroid = /android/i.test(navigator.userAgent);
-      if (isIOS) {
-        message.textContent =
-          "Pe iPhone: deschide pagina în Safari, apasă Distribuire ⬆️ și apoi Adăugați la ecranul principal.";
-      } else if (isAndroid) {
-        message.textContent =
-          "Deschide această pagină în Chrome. Apasă meniul ⋮ și caută «Instalează aplicația» sau «Adaugă la ecranul de pornire». Dacă opțiunea lipsește, browserul nu oferă acum instalarea directă.";
-      } else {
-        message.textContent =
-          "Deschide pagina în Chrome sau într-un browser compatibil cu instalarea aplicațiilor web.";
-      }
-    });
-    document.getElementById("copyButton").addEventListener("click", async function () {
-      const code = "ARI100KRAT";
-      try {
-        await navigator.clipboard.writeText(code);
-        message.textContent = "✅ Codul ARI100KRAT a fost copiat!";
-      } catch (error) {
-        const field = document.createElement("textarea");
-        field.value = code;
-        field.style.position = "fixed";
-        field.style.opacity = "0";
-        document.body.appendChild(field);
-        field.select();
-        const copied = document.execCommand("copy");
-        field.remove();
-        message.textContent = copied
-          ? "✅ Codul ARI100KRAT a fost copiat!"
-          : "Cod promoțional: ARI100KRAT";
-      }
-    });
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("./sw.js").catch(function () {
-          console.log("Service worker nu s-a putut înregistra.");
-        });
-      });
+    </div>
+    <div class="step">
+      <span class="number">2</span><strong>Apasă Distribuire ⬆️</strong>
+      <p>În Safari, apasă butonul de distribuire — pătratul cu săgeata în sus.</p>
+      <div class="mock">
+        <div class="mock-title">Exemplu de meniu de distribuire</div>
+        <div class="mock-grid">
+          <div class="mock-item"><b>✉️</b>Mesaje</div>
+          <div class="mock-item"><b>📩</b>Mail</div>
+          <div class="mock-item"><b>⬆️</b><span class="mock-highlight">Distribuire</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <span class="number">3</span><strong>Alege „Adăugați la ecranul principal”</strong>
+      <p>În meniul care se deschide, derulează în jos până găsești această opțiune. Dacă nu apare, verifică să folosești Safari.</p>
+      <div class="mock">
+        <div class="mock-title">Exemplu de opțiuni</div>
+        <div class="mock-row">➤ Copiază</div>
+        <div class="mock-row">➤ Adaugă la favorite</div>
+        <div class="mock-row mock-highlight">＋ Adăugați la ecranul principal</div>
+      </div>
+    </div>
+    <div class="step">
+      <span class="number">4</span><strong>Apasă „Adăugați”</strong>
+      <p>Confirmă în partea de sus a ecranului. Pictograma win pass va apărea pe ecranul principal.</p>
+      <div class="mock">
+        <div class="mock-title">Exemplu de ecran principal</div>
+        <div style="display:inline-block;background:#542477;border-radius:15px;padding:13px;font-size:32px">🏆</div>
+        <p class="mock-highlight">win pass</p>
+      </div>
+    </div>
+    <button class="copy" id="closeGuide">ÎNCHIDE INSTRUCȚIUNILE</button>
+  </section>
+  <section id="androidGuide" class="guide hidden">
+    <h2>🤖 Instalare pe Android</h2>
+    <div class="step">
+      <span class="number">1</span><strong>Deschide în Google Chrome</strong>
+      <p>Deschide adresa site-ului direct în Chrome, nu într-o fereastră internă din Telegram.</p>
+    </div>
+    <div class="step">
+      <span class="number">2</span><strong>Apasă „Instalează aplicația”</strong>
+      <p>Dacă Chrome afișează fereastra de instalare, apasă „Instalează” și confirmă.</p>
+    </div>
+    <div class="step">
+      <span class="number">3</span><strong>Dacă fereastra nu apare</strong>
+      <p>Deschide meniul Chrome ⋮ și caută „Instalează aplicația” sau „Adaugă la ecranul de pornire”. Opțiunile diferă în funcție de telefon și browser.</p>
+    </div>
+    <button class="copy" id="closeAndroid">ÎNCHIDE INSTRUCȚIUNILE</button>
+  </section>
+  <p class="footer">win pass este o aplicație web. Instalarea depinde de compatibilitatea browserului și necesită acțiunea utilizatorului.</p>
+</main>
+<script>
+let installPrompt = null;
+const installButton = document.getElementById("install");
+const message = document.getElementById("message");
+const iphoneGuide = document.getElementById("iphoneGuide");
+const androidGuide = document.getElementById("androidGuide");
+function hideGuides() {
+  iphoneGuide.classList.add("hidden");
+  androidGuide.classList.add("hidden");
+}
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  installPrompt = event;
+});
+window.addEventListener("appinstalled", () => {
+  installPrompt = null;
+  message.textContent = "✅ win pass a fost instalată!";
+});
+installButton.addEventListener("click", async () => {
+  message.textContent = "";
+  hideGuides();
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const isAndroid = /android/i.test(navigator.userAgent);
+  const isStandalone =
+    window.matchMedia("(display-mode: standalone)").matches ||
+    navigator.standalone === true;
+  if (isStandalone) {
+    message.textContent = "✅ Aplicația este deja deschisă în modul instalat.";
+    return;
+  }
+  if (isAndroid && installPrompt) {
+    installPrompt.prompt();
+    const result = await installPrompt.userChoice;
+    installPrompt = null;
+    if (result.outcome === "accepted") {
+      message.textContent = "Ai confirmat instalarea. Urmează instrucțiunile afișate de Chrome.";
+    } else {
+      message.textContent = "Instalarea nu a fost confirmată.";
     }
-  </script>
+    return;
+  }
+  if (isIOS) {
+    iphoneGuide.classList.remove("hidden");
+    iphoneGuide.scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
+  if (isAndroid) {
+    androidGuide.classList.remove("hidden");
+    androidGuide.scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
+  message.textContent = "Deschide pagina pe iPhone în Safari sau pe Android în Chrome.";
+});
+document.getElementById("closeGuide").addEventListener("click", () => {
+  iphoneGuide.classList.add("hidden");
+});
+document.getElementById("closeAndroid").addEventListener("click", () => {
+  androidGuide.classList.add("hidden");
+});
+document.getElementById("copy").addEventListener("click", async () => {
+  const code = "ARI100KRAT";
+  try {
+    await navigator.clipboard.writeText(code);
+    message.textContent = "✅ Codul ARI100KRAT a fost copiat!";
+  } catch (error) {
+    const field = document.createElement("textarea");
+    field.value = code;
+    field.style.position = "fixed";
+    field.style.opacity = "0";
+    document.body.appendChild(field);
+    field.select();
+    const copied = document.execCommand("copy");
+    field.remove();
+    message.textContent = copied
+      ? "✅ Codul ARI100KRAT a fost copiat!"
+      : "Cod promoțional: ARI100KRAT";
+  }
+});
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  });
+}
+</script>
 </body>
 </html>
