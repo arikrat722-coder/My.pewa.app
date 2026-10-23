@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -7,239 +6,246 @@
   <meta name="theme-color" content="#10051f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-  <title>Lucky Jet</title>
-  <meta name="description" content="Instalează Lucky Jet pe telefonul tău.">
-
+  <meta name="apple-mobile-web-app-title" content="win pass">
+  <meta name="description" content="win pass - intră în joc!">
+  <title>win pass 🏆</title>
   <link rel="manifest" href="./manifest.json">
   <link rel="apple-touch-icon" href="./icons/icon-192.png">
-  <link rel="icon" href="./icons/icon-192.png">
-
   <style>
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
       min-height: 100vh;
-      padding: 24px 16px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-family: Arial, sans-serif;
       color: white;
       background:
-        radial-gradient(ellipse at top, #521078, transparent 60%),
-        linear-gradient(160deg, #10051f, #07030d);
-    }
-
-    .app {
-      width: 100%;
-      max-width: 430px;
+        radial-gradient(ellipse at top, #5420a8 0%, transparent 48%),
+        linear-gradient(160deg, #10051f, #1c0736 55%, #080310);
       text-align: center;
     }
-
+    .container {
+      width: 100%;
+      max-width: 440px;
+      margin: auto;
+      padding: 25px 18px 40px;
+    }
     .logo {
-      width: 145px;
-      height: 145px;
-      object-fit: contain;
-      border-radius: 28px;
-      filter: drop-shadow(0 0 24px #d000ff88);
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 36px;
+      font-size: 35px;
       font-weight: 900;
-      font-style: italic;
+      letter-spacing: -1px;
+      text-shadow: 0 0 22px #bd55ff;
+      margin: 12px 0 6px;
+    }
+    .logo span { color: #d79aff; }
+    .tagline {
+      color: #cdb6e8;
+      font-size: 13px;
       letter-spacing: 2px;
-      color: #ff43e8;
-      text-shadow: 0 0 16px #d000ff;
+      margin-bottom: 25px;
     }
-
+    .hero {
+      padding: 25px 16px;
+      border: 1px solid #a54cff;
+      border-radius: 24px;
+      background: linear-gradient(145deg, #32105a, #170927);
+      box-shadow: 0 0 30px #7725b84a;
+    }
+    .trophy {
+      font-size: 66px;
+      filter: drop-shadow(0 0 16px #b45aff);
+    }
+    h1 {
+      font-size: 29px;
+      line-height: 1.15;
+      margin: 12px 0;
+    }
     .subtitle {
-      color: #ded0ec;
-      margin: 12px 0 28px;
-      font-size: 15px;
-      line-height: 1.5;
+      color: #d8c6ec;
+      font-size: 14px;
+      line-height: 1.6;
     }
-
-    .install {
+    .promo {
+      margin: 22px 0;
+      padding: 17px;
+      background: #0d0618;
+      border: 1px dashed #b76aff;
+      border-radius: 16px;
+    }
+    .promo-label {
+      font-size: 11px;
+      color: #c6a2ef;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .promo-code {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      overflow-wrap: anywhere;
+    }
+    button, .main-button {
       display: block;
       width: 100%;
-      padding: 19px 12px;
       border: 0;
-      border-radius: 15px;
-      background: linear-gradient(100deg, #ff27d7, #8d32ff);
-      color: white;
-      font-size: 17px;
-      font-weight: 900;
-      cursor: pointer;
-      box-shadow: 0 0 25px #c000ff66;
-    }
-
-    .guide {
-      display: none;
-      margin-top: 24px;
-      padding: 20px;
-      text-align: left;
-      border: 1px solid #a53dff;
-      border-radius: 18px;
-      background: #190b2a;
-    }
-
-    .guide.show { display: block; }
-
-    .guide h2 {
-      text-align: center;
-      color: #ff5ce8;
-      font-size: 21px;
-    }
-
-    .step {
-      margin: 12px 0;
-      padding: 13px;
-      border-radius: 12px;
-      background: #29123c;
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    .number {
-      color: #ff59e8;
-      font-weight: 900;
-    }
-
-    .browser-link {
-      display: block;
-      margin-top: 18px;
-      padding: 15px 12px;
-      border-radius: 12px;
-      background: linear-gradient(100deg, #ff27d7, #8d32ff);
-      color: white;
-      text-align: center;
+      border-radius: 14px;
+      padding: 16px;
+      font-size: 16px;
       font-weight: 900;
       text-decoration: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
     }
-
+    .copy-button {
+      margin-top: 13px;
+      color: white;
+      background: #382052;
+      border: 1px solid #9b52d9;
+    }
+    .main-button {
+      margin-top: 18px;
+      color: #160526;
+      background: linear-gradient(90deg, #e2b4ff, #a64dff);
+      box-shadow: 0 5px 22px #a64dff55;
+    }
+    .section-title {
+      margin: 28px 0 12px;
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .game {
+      display: block;
+      width: 100%;
+      padding: 17px;
+      margin: 10px 0;
+      color: white;
+      text-decoration: none;
+      text-align: left;
+      border: 1px solid #492568;
+      border-radius: 15px;
+      background: #1b0b2b;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .game small {
+      display: block;
+      margin-top: 5px;
+      color: #bda5d3;
+      font-size: 12px;
+      font-weight: normal;
+    }
+    .install-box {
+      margin-top: 25px;
+      padding: 18px;
+      border-radius: 18px;
+      background: #180a28;
+      border: 1px solid #482263;
+      text-align: left;
+    }
+    .install-box h2 {
+      text-align: center;
+      font-size: 18px;
+    }
+    .install-box p {
+      color: #d5c3e5;
+      font-size: 13px;
+      line-height: 1.7;
+    }
     .note {
-      color: #cbb9dc;
-      font-size: 12px;
-      line-height: 1.5;
+      margin-top: 23px;
+      color: #a894bb;
+      font-size: 11px;
+      line-height: 1.6;
     }
-
-    .footer {
-      margin-top: 24px;
-      color: #9d89b1;
-      font-size: 12px;
+    #message {
+      min-height: 20px;
+      color: #dcb8ff;
+      font-size: 13px;
+      margin-top: 10px;
     }
   </style>
 </head>
-
 <body>
-  <main class="app">
-    <img
-      class="logo"
-      src="./icons/icon-192.png"
-      alt="Lucky Jet"
-      onerror="this.style.display='none'"
-    >
-
-    <h1>LUCKY JET</h1>
-
-    <p class="subtitle">
-      Instalează aplicația pe ecranul telefonului tău.
+  <main class="container">
+    <div class="logo">win <span>pass</span> 🏆</div>
+    <div class="tagline">INTRĂ ÎN JOC</div>
+    <section class="hero">
+      <div class="trophy">🏆</div>
+      <h1>Jocurile tale.<br>Într-un singur loc.</h1>
+      <p class="subtitle">
+        Accesează platforma și găsește jocul preferat.
+      </p>
+      <div class="promo">
+        <div class="promo-label">CODUL TĂU PROMOȚIONAL</div>
+        <div class="promo-code" id="promoCode">ARI100KRAT</div>
+        <button class="copy-button" id="copyButton" type="button">
+          📋 COPIAZĂ CODUL
+        </button>
+        <div id="message" aria-live="polite"></div>
+      </div>
+      <a
+        class="main-button"
+        href="https://w-one973.com/v3/lucky-jet-updated?p=qepu"
+        target="_blank"
+        rel="noopener noreferrer"
+      >🚀 DESCHIDE PLATFORMA</a>
+    </section>
+    <div class="section-title">🎮 JOCURI</div>
+    <a class="game"
+       href="https://w-one973.com/v3/lucky-jet-updated?p=qepu"
+       target="_blank" rel="noopener noreferrer">
+      🚀 Lucky Jet
+      <small>Deschide platforma de jocuri</small>
+    </a>
+    <a class="game"
+       href="https://w-one973.com/v3/lucky-jet-updated?p=qepu"
+       target="_blank" rel="noopener noreferrer">
+      🎯 Alte jocuri
+      <small>Intră pe platformă pentru a verifica jocurile disponibile</small>
+    </a>
+    <section class="install-box">
+      <h2>📲 Adaugă win pass pe ecran</h2>
+      <p><strong>🍎 iPhone:</strong><br>
+        1. Deschide această pagină în Safari.<br>
+        2. Apasă butonul de distribuire ⬆️.<br>
+        3. Alege „Adăugați la ecranul principal”.<br>
+        4. Apasă „Adăugați”.
+      </p>
+      <p><strong>🤖 Android:</strong><br>
+        1. Deschide pagina în Chrome.<br>
+        2. Apasă meniul ⋮.<br>
+        3. Alege „Instalează aplicația” sau „Adaugă la ecranul de pornire”, dacă apare.
+      </p>
+    </section>
+    <p class="note">
+      win pass este o pagină de acces către platformă, nu o aplicație
+      nativă din App Store. Disponibilitatea jocurilor, promoțiile și
+      condițiile acestora trebuie verificate pe platformă.
+      Joacă responsabil și numai dacă ai vârsta legală.
     </p>
-
-    <button class="install" id="installBtn" type="button">
-      📲 INSTALEAZĂ APLICAȚIA
-    </button>
-
-    <section class="guide" id="guide" aria-live="polite"></section>
-
-    <div class="footer">LUCKY JET · INSTALARE PE TELEFON</div>
   </main>
-
   <script>
-    const APP_URL =
-      "https://arikrat722-coder.github.io/My.pewa.app/";
-
-    const AFFILIATE_URL =
-      "https://w-one973.com/v3/lucky-jet-updated?p=qepu";
-
-    const button = document.getElementById("installBtn");
-    const guide = document.getElementById("guide");
-
-    // Arată ghidul de instalare.
-    function showGuide() {
-      guide.innerHTML = `
-        <h2>Deschide în Safari</h2>
-
-        <div class="step">
-          <span class="number">PASUL 1</span><br>
-          Apasă butonul de mai jos pentru a deschide pagina Lucky Jet.
-        </div>
-
-        <a class="browser-link"
-           href="${APP_URL}?install=1"
-           target="_blank"
-           rel="noopener">
-          🌐 DESCHIDE PAGINA ÎN BROWSER
-        </a>
-
-        <div class="step">
-          <span class="number">PASUL 2</span><br>
-          Dacă pagina se deschide în Telegram, intră în meniul acestuia
-          și alege „Deschide în Safari”, dacă opțiunea este disponibilă.
-        </div>
-
-        <div class="step">
-          <span class="number">PASUL 3</span><br>
-          În Safari, apasă „Partajare” — pătratul cu săgeata în sus.
-        </div>
-
-        <div class="step">
-          <span class="number">PASUL 4</span><br>
-          Alege „Adaugă pe ecranul principal”, apoi apasă „Adaugă”.
-        </div>
-
-        <p class="note">
-          Pe iPhone, instalarea trebuie confirmată de utilizator.
-          Un site nu poate forța instalarea sau deschiderea Safari din Telegram.
-        </p>
-      `;
-
-      guide.classList.add("show");
-      guide.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    }
-
-    button.addEventListener("click", showGuide);
-
-    const params = new URLSearchParams(window.location.search);
-
-    // Pagina deschisă cu ?install=1 arată ghidul.
-    if (params.get("install") === "1") {
-      showGuide();
-    }
-
-    // Când aplicația instalată este lansată,
-    // deschide linkul de afiliat.
-    const isStandalone =
-      window.matchMedia("(display-mode: standalone)").matches ||
-      window.navigator.standalone === true;
-
-    if (isStandalone) {
-      window.location.replace(AFFILIATE_URL);
-    }
-
-    // Înregistrarea service worker-ului existent.
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker
-          .register("./sw.js")
-          .catch(error => console.error("Service worker:", error));
-      });
-    }
+    const copyButton = document.getElementById("copyButton");
+    const message = document.getElementById("message");
+    copyButton.addEventListener("click", async function () {
+      const code = "ARI100KRAT";
+      try {
+        await navigator.clipboard.writeText(code);
+        message.textContent = "✅ Codul a fost copiat!";
+      } catch (error) {
+        const field = document.createElement("textarea");
+        field.value = code;
+        field.style.position = "fixed";
+        field.style.opacity = "0";
+        document.body.appendChild(field);
+        field.select();
+        const copied = document.execCommand("copy");
+        field.remove();
+        message.textContent = copied
+          ? "✅ Codul a fost copiat!"
+          : "Codul tău este ARI100KRAT";
+      }
+    });
   </script>
 </body>
 </html>
