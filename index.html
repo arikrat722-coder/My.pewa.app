@@ -365,9 +365,6 @@
       <button id="guideCopyBtn" class="copy-btn">
         📋 COPIAZĂ CODUL ARI100KRAT
       </button>
-      <button id="platformBtn" class="secondary-btn">
-        DESCHIDE PLATFORMA 1WIN
-      </button>
       <button id="homeBtn" class="secondary-btn">
         ÎNAPOI LA PAGINA PRINCIPALĂ
       </button>
@@ -392,10 +389,7 @@
       return window.matchMedia("(display-mode: standalone)").matches ||
         window.navigator.standalone === true;
     }
-    /*
-      La pornirea din pictograma instalată, încearcă să deschidă
-      direct platforma configurată mai sus.
-    */
+    // La pornirea din pictograma instalată, deschide platforma.
     if (isInstalledApp()) {
       window.location.replace(PLATFORM_URL);
     }
@@ -468,11 +462,6 @@
     document
       .getElementById("homeBtn")
       .addEventListener("click", showHome);
-    document
-      .getElementById("platformBtn")
-      .addEventListener("click", () => {
-        window.location.href = PLATFORM_URL;
-      });
     if (
       "serviceWorker" in navigator &&
       location.protocol.startsWith("http")
