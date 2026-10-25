@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -14,7 +15,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Win Pass">
 
-  <!-- Imagine și informații pentru previzualizarea linkului -->
   <meta property="og:title" content="Win Pass 🏆">
   <meta property="og:description" content="Accesează Win Pass de pe telefonul tău.">
   <meta property="og:image" content="https://arikrat722-coder.github.io/My.pewa.app/apple-touch-icon.png">
@@ -146,6 +146,7 @@
     }
 
     .secondary-button {
+      display: block;
       width: 100%;
       padding: 13px;
       border: 1px solid rgba(213, 165, 255, .35);
@@ -257,6 +258,20 @@
       text-align: center;
     }
 
+    .android-info {
+      display: none;
+      margin: 16px 0;
+      padding: 16px;
+      border: 1px solid rgba(190, 121, 255, .3);
+      border-radius: 14px;
+      background: rgba(119, 37, 174, .12);
+      color: #e0d5eb;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .android-info.show { display: block; }
+
     .footer {
       margin-top: 19px;
       color: #9382a7;
@@ -298,60 +313,78 @@
       <div class="promo-box">
         <div class="promo-label">🎁 CODUL TĂU PROMOȚIONAL</div>
         <div class="promo-code" id="promoCode">ARI100KRAT</div>
-
         <button class="secondary-button" id="copyPromoButton">
           📋 COPIAZĂ CODUL
         </button>
       </div>
 
       <section class="guide" id="installGuide">
-        <h2>📲 Instalează Win Pass pe iPhone</h2>
+        <h2 id="guideTitle">📲 Instalează Win Pass pe iPhone</h2>
 
-        <div class="step">
-          <div class="step-heading">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <strong>Apasă pe cele trei puncte (•••) din partea de jos.</strong>
+        <div id="iosGuideContent">
+          <div class="step">
+            <div class="step-heading">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <strong>Apasă pe cele trei puncte (•••) din partea de jos.</strong>
+              </div>
             </div>
+            <img class="guide-image" src="./guide-step-1.png"
+                 alt="Cele trei puncte din partea de jos" loading="lazy">
           </div>
-          <img class="guide-image" src="./guide-step-1.png"
-               alt="Cele trei puncte din partea de jos" loading="lazy">
-        </div>
 
-        <div class="step">
-          <div class="step-heading">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <strong>Apasă pe „Partajați”.</strong>
-              <p>Din meniul care se deschide, apasă pe opțiunea „Partajați”.</p>
+          <div class="step">
+            <div class="step-heading">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <strong>Apasă pe „Partajați”.</strong>
+                <p>Din meniul care se deschide, apasă pe opțiunea „Partajați”.</p>
+              </div>
             </div>
+            <img class="guide-image" src="./guide-step-2.png"
+                 alt="Meniul cu opțiunea Partajați" loading="lazy">
           </div>
-          <img class="guide-image" src="./guide-step-2.png"
-               alt="Meniul cu opțiunea Partajați" loading="lazy">
-        </div>
 
-        <div class="step">
-          <div class="step-heading">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <strong>Adaugă Win Pass pe ecranul principal.</strong>
-              <p>
-                Apasă pe „Adăugați la ecranul principal”,
-                apoi apasă pe „Adăugați” în colțul din dreapta sus.
-              </p>
+          <div class="step">
+            <div class="step-heading">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <strong>Adaugă Win Pass pe ecranul principal.</strong>
+                <p>
+                  Apasă pe „Adăugați la ecranul principal”,
+                  apoi apasă pe „Adăugați” în colțul din dreapta sus.
+                </p>
+              </div>
             </div>
+            <img class="guide-image" src="./guide-step-3.jpg"
+                 alt="Opțiunea Adăugați la ecranul principal" loading="lazy">
           </div>
-          <img class="guide-image" src="./guide-step-3.jpg"
-               alt="Opțiunea Adăugați la ecranul principal" loading="lazy">
+
+          <div class="success">
+            ✅ <b>Gata!</b><br>
+            Pictograma Win Pass va apărea pe ecranul principal al iPhone-ului.
+          </div>
+
+          <p class="guide-note">
+            Dacă pagina s-a deschis în Telegram, deschide mai întâi meniul
+            browserului și alege „Deschide în Safari”, dacă opțiunea este disponibilă.
+            Apoi urmează pașii de mai sus. Safari nu permite unui site să adauge
+            automat pictograma pe ecran.
+          </p>
         </div>
 
-        <div class="success">
-          ✅ <b>Gata!</b><br>
-          Pictograma Win Pass va apărea pe ecranul principal al iPhone-ului.
+        <div class="android-info" id="androidInfo">
+          <b>📲 Pentru instalare pe Android:</b><br><br>
+          1. Deschide această pagină în Google Chrome.<br>
+          2. Apasă pe meniul cu trei puncte (⋮) din Chrome.<br>
+          3. Alege „Instalează aplicația” sau „Adaugă pe ecranul de pornire”,
+          dacă apare această opțiune.<br><br>
+          Confirmă instalarea când telefonul îți cere acordul.
         </div>
 
-        <p class="guide-note">
-          Adăugarea pe ecranul principal trebuie confirmată de tine.
+        <p class="guide-note" id="telegramNote" style="display:none">
+          Pagina este deschisă în Telegram. Pentru instalare, deschide meniul
+          Telegram și caută opțiunea de a deschide pagina în browserul telefonului.
         </p>
 
         <button class="secondary-button" id="closeGuideButton"
@@ -376,14 +409,42 @@
     const installGuide = document.getElementById("installGuide");
     const closeGuideButton = document.getElementById("closeGuideButton");
     const copyPromoButton = document.getElementById("copyPromoButton");
+    const guideTitle = document.getElementById("guideTitle");
+    const iosGuideContent = document.getElementById("iosGuideContent");
+    const androidInfo = document.getElementById("androidInfo");
+    const telegramNote = document.getElementById("telegramNote");
 
     let deferredInstallPrompt = null;
+
+    const userAgent = navigator.userAgent || "";
+    const isIOS = /iphone|ipad|ipod/i.test(userAgent);
+    const isAndroid = /android/i.test(userAgent);
+    const isTelegram = /Telegram/i.test(userAgent);
 
     function isInstalledApp() {
       return (
         window.matchMedia("(display-mode: standalone)").matches ||
         window.navigator.standalone === true
       );
+    }
+
+    function showGuide(type) {
+      installGuide.classList.add("show");
+      iosGuideContent.style.display = type === "ios" ? "block" : "none";
+      androidInfo.classList.toggle("show", type === "android");
+
+      if (type === "android") {
+        guideTitle.textContent = "📲 Instalează Win Pass pe Android";
+      } else {
+        guideTitle.textContent = "📲 Instalează Win Pass pe iPhone";
+      }
+
+      telegramNote.style.display = isTelegram ? "block" : "none";
+
+      installGuide.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
     }
 
     if (isInstalledApp()) {
@@ -395,30 +456,47 @@
       deferredInstallPrompt = event;
     });
 
-    installButton.addEventListener("click", async () => {
-      const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+    window.addEventListener("appinstalled", () => {
+      deferredInstallPrompt = null;
+      installButton.textContent = "✅ APLICAȚIE INSTALATĂ";
+    });
 
+    installButton.addEventListener("click", async () => {
       if (isIOS) {
-        installGuide.classList.add("show");
-        installGuide.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
+        showGuide("ios");
         return;
       }
 
-      if (deferredInstallPrompt) {
-        deferredInstallPrompt.prompt();
-        await deferredInstallPrompt.userChoice;
+      if (isAndroid && deferredInstallPrompt) {
+        try {
+          deferredInstallPrompt.prompt();
+          await deferredInstallPrompt.userChoice;
+        } catch (error) {
+          console.error("Instalarea nu a putut fi pornită:", error);
+        }
+
         deferredInstallPrompt = null;
         return;
       }
 
-      installGuide.classList.add("show");
-      installGuide.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+      if (isAndroid) {
+        showGuide("android");
+        return;
+      }
+
+      if (deferredInstallPrompt) {
+        try {
+          deferredInstallPrompt.prompt();
+          await deferredInstallPrompt.userChoice;
+        } catch (error) {
+          console.error("Instalarea nu a putut fi pornită:", error);
+        }
+
+        deferredInstallPrompt = null;
+        return;
+      }
+
+      showGuide("android");
     });
 
     closeGuideButton.addEventListener("click", () => {
