@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -13,16 +14,11 @@
   <meta name="apple-mobile-web-app-title" content="Win Pass">
 
   <link rel="manifest" href="./manifest.json">
-  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    :root {
-      color-scheme: dark;
-    }
+    * { box-sizing: border-box; }
+    :root { color-scheme: dark; }
 
     body {
       margin: 0;
@@ -32,36 +28,32 @@
       padding-top: max(24px, env(safe-area-inset-top));
       padding-bottom: max(24px, env(safe-area-inset-bottom));
       font-family: Arial, Helvetica, sans-serif;
-      color: #ffffff;
+      color: #fff;
       background:
         radial-gradient(ellipse at top, #49116f 0%, transparent 55%),
         linear-gradient(160deg, #10051f 0%, #19082d 55%, #080311 100%);
     }
 
-    .container {
-      width: 100%;
-      max-width: 440px;
-      margin: 0 auto;
-    }
+    .container { width: 100%; max-width: 440px; margin: 0 auto; }
 
     .card {
       padding: 25px 20px;
       overflow: hidden;
       text-align: center;
-      border: 1px solid rgba(201, 116, 255, 0.32);
+      border: 1px solid rgba(201, 116, 255, .32);
       border-radius: 24px;
-      background: rgba(20, 8, 37, 0.94);
-      box-shadow: 0 0 35px rgba(155, 44, 255, 0.16);
+      background: rgba(20, 8, 37, .94);
+      box-shadow: 0 0 35px rgba(155, 44, 255, .16);
     }
 
     .badge {
       display: inline-block;
       padding: 7px 13px;
       margin-bottom: 15px;
-      border: 1px solid rgba(255, 211, 77, 0.4);
+      border: 1px solid rgba(255, 211, 77, .4);
       border-radius: 30px;
       color: #ffdb68;
-      background: rgba(255, 190, 40, 0.08);
+      background: rgba(255, 190, 40, .08);
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 1px;
@@ -73,19 +65,17 @@
       margin: 0 auto 14px;
       object-fit: contain;
       border-radius: 23px;
-      filter: drop-shadow(0 0 16px rgba(176, 63, 255, 0.35));
+      filter: drop-shadow(0 0 16px rgba(176, 63, 255, .35));
     }
 
     h1 {
       margin: 8px 0;
       font-size: 32px;
       font-weight: 900;
-      letter-spacing: 0.5px;
+      letter-spacing: .5px;
     }
 
-    .highlight {
-      color: #d68aff;
-    }
+    .highlight { color: #d68aff; }
 
     .subtitle {
       margin: 10px 0 23px;
@@ -101,26 +91,25 @@
       margin: 12px 0;
       border: none;
       border-radius: 15px;
-      color: #ffffff;
+      color: #fff;
       background: linear-gradient(100deg, #8a21e8, #c02cff);
-      box-shadow: 0 6px 20px rgba(168, 42, 255, 0.25);
+      box-shadow: 0 6px 20px rgba(168, 42, 255, .25);
       font-size: 16px;
       font-weight: 900;
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
     }
 
-    .main-button:active,
-    .secondary-button:active {
-      transform: scale(0.98);
+    .main-button:active, .secondary-button:active {
+      transform: scale(.98);
     }
 
     .promo-box {
       margin-top: 22px;
       padding: 17px 14px;
-      border: 1px solid rgba(255, 208, 78, 0.32);
+      border: 1px solid rgba(255, 208, 78, .32);
       border-radius: 16px;
-      background: rgba(255, 193, 55, 0.06);
+      background: rgba(255, 193, 55, .06);
     }
 
     .promo-label {
@@ -133,7 +122,7 @@
 
     .promo-code {
       margin: 5px 0 13px;
-      color: #ffffff;
+      color: #fff;
       font-size: 25px;
       font-weight: 900;
       letter-spacing: 2px;
@@ -143,10 +132,10 @@
     .secondary-button {
       width: 100%;
       padding: 13px;
-      border: 1px solid rgba(213, 165, 255, 0.35);
+      border: 1px solid rgba(213, 165, 255, .35);
       border-radius: 12px;
-      color: #ffffff;
-      background: rgba(139, 48, 206, 0.18);
+      color: #fff;
+      background: rgba(139, 48, 206, .18);
       font-size: 14px;
       font-weight: 800;
       cursor: pointer;
@@ -158,14 +147,14 @@
       margin-top: 20px;
       padding: 20px 16px;
       text-align: left;
-      border: 1px solid rgba(200, 126, 255, 0.35);
+      border: 1px solid rgba(200, 126, 255, .35);
       border-radius: 18px;
-      background: rgba(10, 3, 20, 0.8);
+      background: rgba(10, 3, 20, .8);
     }
 
     .guide.show {
       display: block;
-      animation: appear 0.25s ease-out;
+      animation: appear .25s ease-out;
     }
 
     .guide h2 {
@@ -179,9 +168,9 @@
       display: block;
       margin: 16px 0;
       padding: 15px;
-      border: 1px solid rgba(190, 121, 255, 0.24);
+      border: 1px solid rgba(190, 121, 255, .24);
       border-radius: 15px;
-      background: rgba(119, 37, 174, 0.12);
+      background: rgba(119, 37, 174, .12);
     }
 
     .step-heading {
@@ -199,16 +188,13 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      color: #ffffff;
+      color: #fff;
       background: #8b28cf;
       font-size: 20px;
       font-weight: 900;
     }
 
-    .step-content {
-      flex: 1;
-      min-width: 0;
-    }
+    .step-content { flex: 1; min-width: 0; }
 
     .step-content strong {
       display: block;
@@ -230,7 +216,7 @@
       width: 100%;
       height: auto;
       margin-top: 14px;
-      border: 1px solid rgba(190, 121, 255, 0.35);
+      border: 1px solid rgba(190, 121, 255, .35);
       border-radius: 12px;
       background: #10051f;
     }
@@ -238,10 +224,10 @@
     .success {
       margin-top: 17px;
       padding: 15px 12px;
-      border: 1px solid rgba(87, 240, 160, 0.25);
+      border: 1px solid rgba(87, 240, 160, .25);
       border-radius: 12px;
       color: #a9ffcf;
-      background: rgba(42, 190, 113, 0.08);
+      background: rgba(42, 190, 113, .08);
       text-align: center;
       font-size: 14px;
       line-height: 1.6;
@@ -264,14 +250,8 @@
     }
 
     @keyframes appear {
-      from {
-        opacity: 0;
-        transform: translateY(7px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(7px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -279,7 +259,6 @@
 <body>
   <main class="container">
     <section class="card">
-
       <div class="badge">🏆 WIN PASS</div>
 
       <img
@@ -302,138 +281,84 @@
 
       <div class="promo-box">
         <div class="promo-label">🎁 CODUL TĂU PROMOȚIONAL</div>
-
-        <div class="promo-code" id="promoCode">
-          ARI100KRAT
-        </div>
+        <div class="promo-code" id="promoCode">ARI100KRAT</div>
 
         <button class="secondary-button" id="copyPromoButton">
           📋 COPIAZĂ CODUL
         </button>
       </div>
 
-      <!-- GHID IPHONE -->
-
       <section class="guide" id="installGuide">
-
         <h2>📲 Instalează Win Pass pe iPhone</h2>
-
-        <!-- PASUL 1 -->
 
         <div class="step">
           <div class="step-heading">
             <div class="step-number">1</div>
-
             <div class="step-content">
-              <strong>
-                Apasă pe cele trei puncte (•••) din partea de jos.
-              </strong>
+              <strong>Apasă pe cele trei puncte (•••) din partea de jos.</strong>
             </div>
           </div>
-
-          <img
-            class="guide-image"
-            src="./guide-step-1.png"
-            alt="Cele trei puncte din partea de jos"
-            loading="lazy"
-          >
+          <img class="guide-image" src="./guide-step-1.png"
+               alt="Cele trei puncte din partea de jos" loading="lazy">
         </div>
-
-        <!-- PASUL 2 -->
 
         <div class="step">
           <div class="step-heading">
             <div class="step-number">2</div>
-
             <div class="step-content">
               <strong>Apasă pe „Partajați”.</strong>
-
-              <p>
-                Din meniul care se deschide, apasă pe opțiunea
-                „Partajați”.
-              </p>
+              <p>Din meniul care se deschide, apasă pe opțiunea „Partajați”.</p>
             </div>
           </div>
-
-          <img
-            class="guide-image"
-            src="./guide-step-2.png"
-            alt="Meniul cu opțiunea Partajați"
-            loading="lazy"
-          >
+          <img class="guide-image" src="./guide-step-2.png"
+               alt="Meniul cu opțiunea Partajați" loading="lazy">
         </div>
-
-        <!-- PASUL 3 -->
 
         <div class="step">
           <div class="step-heading">
             <div class="step-number">3</div>
-
             <div class="step-content">
-              <strong>
-                Adaugă Win Pass pe ecranul principal.
-              </strong>
-
+              <strong>Adaugă Win Pass pe ecranul principal.</strong>
               <p>
                 Apasă pe „Adăugați la ecranul principal”,
                 apoi apasă pe „Adăugați” în colțul din dreapta sus.
               </p>
             </div>
           </div>
-
-          <img
-            class="guide-image"
-            src="./guide-step-3.jpg"
-            alt="Opțiunea Adăugați la ecranul principal"
-            loading="lazy"
-          >
+          <img class="guide-image" src="./guide-step-3.jpg"
+               alt="Opțiunea Adăugați la ecranul principal" loading="lazy">
         </div>
 
         <div class="success">
           ✅ <b>Gata!</b><br>
-          Pictograma Win Pass va apărea pe ecranul principal
-          al iPhone-ului.
+          Pictograma Win Pass va apărea pe ecranul principal al iPhone-ului.
         </div>
 
         <p class="guide-note">
           Adăugarea pe ecranul principal trebuie confirmată de tine.
         </p>
 
-        <button
-          class="secondary-button"
-          id="closeGuideButton"
-          style="margin-top:16px"
-        >
+        <button class="secondary-button" id="closeGuideButton" style="margin-top:16px">
           ÎNCHIDE GHIDUL
         </button>
-
       </section>
 
       <div class="footer">
         Win Pass 🏆<br>
         Adaugă pictograma pe ecranul principal pentru acces rapid.
       </div>
-
     </section>
   </main>
 
   <script>
     const PLATFORM_URL =
       "https://w-one973.com/v3/lucky-jet-updated?p=qepu";
-
     const PROMO_CODE = "ARI100KRAT";
 
-    const installButton =
-      document.getElementById("installButton");
-
-    const installGuide =
-      document.getElementById("installGuide");
-
-    const closeGuideButton =
-      document.getElementById("closeGuideButton");
-
-    const copyPromoButton =
-      document.getElementById("copyPromoButton");
+    const installButton = document.getElementById("installButton");
+    const installGuide = document.getElementById("installGuide");
+    const closeGuideButton = document.getElementById("closeGuideButton");
+    const copyPromoButton = document.getElementById("copyPromoButton");
 
     let deferredInstallPrompt = null;
 
@@ -444,88 +369,57 @@
       );
     }
 
-    // Dacă Win Pass este deschisă din pictograma instalată,
-    // redirecționează utilizatorul către platformă.
     if (isInstalledApp()) {
       window.location.replace(PLATFORM_URL);
     }
 
-    // Detectează posibilitatea instalării pe browsere compatibile.
     window.addEventListener("beforeinstallprompt", (event) => {
       event.preventDefault();
       deferredInstallPrompt = event;
     });
 
     installButton.addEventListener("click", async () => {
-      const isIOS =
-        /iphone|ipad|ipod/i.test(navigator.userAgent);
+      const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
 
-      // Pe iPhone afișează ghidul cu cele trei imagini.
       if (isIOS) {
         installGuide.classList.add("show");
-
-        installGuide.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-
+        installGuide.scrollIntoView({ behavior: "smooth", block: "start" });
         return;
       }
 
-      // Pe Android încearcă instalarea dacă este disponibilă.
       if (deferredInstallPrompt) {
         deferredInstallPrompt.prompt();
-
         await deferredInstallPrompt.userChoice;
-
         deferredInstallPrompt = null;
-
         return;
       }
 
-      // Dacă instalarea directă nu este disponibilă,
-      // afișează ghidul.
       installGuide.classList.add("show");
-
-      installGuide.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+      installGuide.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
     closeGuideButton.addEventListener("click", () => {
       installGuide.classList.remove("show");
-
-      installButton.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
+      installButton.scrollIntoView({ behavior: "smooth", block: "center" });
     });
 
-    // Copierea codului promoțional.
     copyPromoButton.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(PROMO_CODE);
-
         copyPromoButton.textContent = "✅ COD COPIAT!";
 
         setTimeout(() => {
           copyPromoButton.textContent = "📋 COPIAZĂ CODUL";
         }, 2000);
-
       } catch (error) {
         const textArea = document.createElement("textarea");
-
         textArea.value = PROMO_CODE;
         textArea.style.position = "fixed";
         textArea.style.opacity = "0";
-
         document.body.appendChild(textArea);
-
         textArea.select();
 
         const copied = document.execCommand("copy");
-
         textArea.remove();
 
         copyPromoButton.textContent = copied
@@ -538,13 +432,10 @@
       }
     });
 
-    // Înregistrarea service worker-ului existent.
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         navigator.serviceWorker.register("./sw.js")
-          .catch((error) => {
-            console.error("Service worker:", error);
-          });
+          .catch((error) => console.error("Service worker:", error));
       });
     }
   </script>
